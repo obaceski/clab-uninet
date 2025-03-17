@@ -1,0 +1,76 @@
+name: uninet-lab-v1
+
+topology:
+  nodes:
+    CU-R1:
+      kind: xrd
+      startup-config: first_boot_configs/xrd_config.cfg
+      image: ios-xr/xrd-control-plane:24.4.1
+      labels:
+        ansible-group: cuautitlan-xr
+
+    CU-R2:
+      kind: xrd
+      startup-config: first_boot_configs/xrd_config.cfg
+      image: ios-xr/xrd-control-plane:24.4.1
+      labels:
+        ansible-group: cuautitlan-xr
+
+    CU-R3:
+      kind: xrd
+      startup-config: first_boot_configs/xrd_config.cfg
+      image: ios-xr/xrd-control-plane:24.4.1
+      labels:
+        ansible-group: cuautitlan-xr
+
+    CU-R4:
+      kind: xrd
+      startup-config: first_boot_configs/xrd_config.cfg
+      image: ios-xr/xrd-control-plane:24.4.1
+      labels:
+        ansible-group: cuautitlan-xr
+
+    CU-R5:
+      kind: crpd
+      #startup-config: first_boot_configs/junos_config.cfg
+      image: crpd:23.2R1-S2.5
+      labels:
+        ansible-group: cuautitlan-junos
+
+    CU-R6:
+      kind: crpd
+      #startup-config: first_boot_configs/junos_config.cfg
+      image: crpd:23.2R1-S2.5
+      labels:
+        ansible-group: cuautitlan-junos
+
+    CU-R7:
+      kind: crpd
+      #startup-config: first_boot_configs/junos_config.cfg
+      image: crpd:23.2R1-S2.5
+      labels:
+        ansible-group: cuautitlan-junos
+
+
+
+
+  links:
+    #cuautitlan
+    - endpoints: ["CU-R1:Gi0-0-0-0", "CU-R2:Gi0-0-0-0"]
+    - endpoints: ["CU-R1:Gi0-0-0-1", "CU-R4:Gi0-0-0-0"]
+    - endpoints: ["CU-R1:Gi0-0-0-2", "CU-R7:eth1"]
+    - endpoints: ["CU-R1:Gi0-0-0-3", "CU-R6:eth1"]
+    - endpoints: ["CU-R1:Gi0-0-0-4", "CU-R5:eth1"]
+
+    - endpoints: ["CU-R2:Gi0-0-0-1", "CU-R3:Gi0-0-0-0"]
+    #- endpoints: ["CU-R2:Gi0-0-0-2", "VA-R12:eth5"]
+    - endpoints: ["CU-R1:Gi0-0-0-2", "CU-R5:eth2"]
+    - endpoints: ["CU-R1:Gi0-0-0-3", "CU-R6:eth2"]
+    - endpoints: ["CU-R1:Gi0-0-0-4", "CU-R7:eth2"]
+    - endpoints: ["CU-R1:Gi0-0-0-5", "CU-R4:Gi0-0-0-1"]
+
+
+
+    
+
+    - endpoints: ["j1:eth1", "r2:Gi0-0-0-4"]
