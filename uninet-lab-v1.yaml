@@ -51,6 +51,165 @@ topology:
       labels:
         ansible-group: cuautitlan-junos
 
+    # VA-R1:
+    #   kind: xrd
+    #   startup-config: first_boot_configs/xrd_config.cfg
+    #   image: ios-xr/xrd-control-plane:24.4.1
+    #   labels:
+    #     ansible-group: vallejo-xr
+
+    # VA-R2:
+    #   kind: xrd
+    #   startup-config: first_boot_configs/xrd_config.cfg
+    #   image: ios-xr/xrd-control-plane:24.4.1
+    #   labels:
+    #     ansible-group: vallejo-xr
+
+    # VA-R3:
+    #   kind: xrd
+    #   startup-config: first_boot_configs/xrd_config.cfg
+    #   image: ios-xr/xrd-control-plane:24.4.1
+    #   labels:
+    #     ansible-group: vallejo-xr
+
+    # VA-R4:
+    #   kind: xrd
+    #   startup-config: first_boot_configs/xrd_config.cfg
+    #   image: ios-xr/xrd-control-plane:24.4.1
+    #   labels:
+    #     ansible-group: vallejo-xr
+
+    # VA-R5:
+    #   kind: xrd
+    #   startup-config: first_boot_configs/xrd_config.cfg
+    #   image: ios-xr/xrd-control-plane:24.4.1
+    #   labels:
+    #     ansible-group: vallejo-xr
+
+    # VA-R6:
+    #   kind: xrd
+    #   startup-config: first_boot_configs/xrd_config.cfg
+    #   image: ios-xr/xrd-control-plane:24.4.1
+    #   labels:
+    #     ansible-group: vallejo-xr
+
+    # VA-R7:
+    #   kind: xrd
+    #   startup-config: first_boot_configs/xrd_config.cfg
+    #   image: ios-xr/xrd-control-plane:24.4.1
+    #   labels:
+    #     ansible-group: vallejo-xr
+
+    # VA-R8:
+    #   kind: xrd
+    #   startup-config: first_boot_configs/xrd_config.cfg
+    #   image: ios-xr/xrd-control-plane:24.4.1
+    #   labels:
+    #     ansible-group: vallejo-xr
+
+    # VA-R9:
+    #   kind: xrd
+    #   startup-config: first_boot_configs/xrd_config.cfg
+    #   image: ios-xr/xrd-control-plane:24.4.1
+    #   labels:
+    #     ansible-group: vallejo-xr
+
+    # VA-R10:
+    #   kind: crpd
+    #   #startup-config: first_boot_configs/junos_config.cfg
+    #   image: crpd:23.2R1-S2.5
+    #   labels:
+    #     ansible-group: vallejo-junos
+
+    # VA-R11:
+    #   kind: crpd
+    #   #startup-config: first_boot_configs/junos_config.cfg
+    #   image: crpd:23.2R1-S2.5
+    #   labels:
+    #     ansible-group: vallejo-junos
+
+    # VA-R12:
+    #   kind: crpd
+    #   #startup-config: first_boot_configs/junos_config.cfg
+    #   image: crpd:23.2R1-S2.5
+    #   labels:
+    #     ansible-group: vallejo-junos
+
+    # VA-R13:
+    #   kind: crpd
+    #   #startup-config: first_boot_configs/junos_config.cfg
+    #   image: crpd:23.2R1-S2.5
+    #   labels:
+    #     ansible-group: vallejo-junos
+
+    # VA-R14:
+    #   kind: cisco_csr1000v
+    #   image: vrnetlab/cisco_csr1000v:17.03.04
+    #   labels:
+    #     ansible-group: vallejo-xe
+
+    # TR-R1:
+    #   kind: xrd
+    #   startup-config: first_boot_configs/xrd_config.cfg
+    #   image: ios-xr/xrd-control-plane:24.4.1
+    #   labels:
+    #     ansible-group: triara-xr
+
+    # TR-R2:
+    #   kind: xrd
+    #   startup-config: first_boot_configs/xrd_config.cfg
+    #   image: ios-xr/xrd-control-plane:24.4.1
+    #   labels:
+    #     ansible-group: triara-xr
+
+    # TR-R3:
+    #   kind: xrd
+    #   startup-config: first_boot_configs/xrd_config.cfg
+    #   image: ios-xr/xrd-control-plane:24.4.1
+    #   labels:
+    #     ansible-group: triara-xr
+
+    # TR-R4:
+    #   kind: xrd
+    #   startup-config: first_boot_configs/xrd_config.cfg
+    #   image: ios-xr/xrd-control-plane:24.4.1
+    #   labels:
+    #     ansible-group: triara-xr
+    
+    # TR-R5:
+    #   kind: xrd
+    #   startup-config: first_boot_configs/xrd_config.cfg
+    #   image: ios-xr/xrd-control-plane:24.4.1
+    #   labels:
+    #     ansible-group: triara-xr
+
+    # VA-R6:
+    #   kind: crpd
+    #   #startup-config: first_boot_configs/junos_config.cfg
+    #   image: crpd:23.2R1-S2.5
+    #   labels:
+    #     ansible-group: triara-junos
+
+    # VA-R7:
+    #   kind: crpd
+    #   #startup-config: first_boot_configs/junos_config.cfg
+    #   image: crpd:23.2R1-S2.5
+    #   labels:
+    #     ansible-group: triara-junos
+
+    # VA-R8:
+    #   kind: crpd
+    #   #startup-config: first_boot_configs/junos_config.cfg
+    #   image: crpd:23.2R1-S2.5
+    #   labels:
+    #     ansible-group: triara-junos
+
+    # VA-R9:
+    #   kind: crpd
+    #   #startup-config: first_boot_configs/junos_config.cfg
+    #   image: crpd:23.2R1-S2.5
+    #   labels:
+    #     ansible-group: triara-junos
 
 
 
@@ -69,8 +228,4 @@ topology:
     - endpoints: ["CU-R1:Gi0-0-0-4", "CU-R7:eth2"]
     - endpoints: ["CU-R1:Gi0-0-0-5", "CU-R4:Gi0-0-0-1"]
 
-
-
-    
-
-    - endpoints: ["j1:eth1", "r2:Gi0-0-0-4"]
+    #vallejo
