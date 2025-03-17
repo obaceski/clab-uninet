@@ -1,0 +1,57 @@
+---
+
+- name: Show IOS-XR release
+  hosts: xrd
+  gather_facts: false
+  
+  tasks:
+  #- name: Enable NETCONF if not already done
+  #  cisco.iosxr.iosxr_netconf:
+  #     state: present
+  #     netconf_vrf: default
+  #     listens_on: 830
+
+  - name: Show ver
+    cisco.iosxr.iosxr_command:
+      commands: 
+      - 'show ver'
+    register: output
+
+  - name: print captured output
+    ansible.builtin.debug:
+      msg: "{{ output['stdout_lines'][0][8] }}"
+
+
+- name: Show IOS-XE release
+  hosts: cisco_csr1000v
+  gather_facts: false
+  
+  tasks:
+  - name: Show ver
+    cisco.ios.ios_command:
+      commands: 
+      - 'show ver'
+    register: output
+
+  - name: print captured output
+    ansible.builtin.debug:
+      msg: "{{ output['stdout_lines'][0][1] }}"
+
+
+
+
+- name: Show Junos release
+  hosts: crpd
+  gather_facts: false
+  
+  tasks:
+  - name: Show ver
+    junipernetworks.junos.junos_command:
+      commands: 
+      - 'show ver'
+    register: output
+
+  - name: print captured output
+    ansible.builtin.debug:
+      msg: "{{ output['stdout_lines'][0] }}"
+

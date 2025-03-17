@@ -4,6 +4,7 @@ all:
     # Hence no http proxy should be used. Therefore we make sure the http
     # module does not attempt using any global http proxy.
     ansible_httpapi_use_proxy: false
+    ansible_ssh_common_args: '-o StrictHostKeyChecking=no'
   children:
     cisco_csr1000v:
       vars:
@@ -22,9 +23,9 @@ all:
       vars:
         # ansible_connection: set ansible_connection variable if required
         ansible_connection: network_cli 
-        ansible_network_os: iosxr
-        ansible_user: cisco
-        ansible_password: cisco123
+        ansible_network_os: junos
+        ansible_user: admin
+        ansible_password: clab123
 
       hosts:
         clab-uninet-lab-v1-CU-R5:
@@ -52,8 +53,10 @@ all:
     xrd:
       vars:
         # ansible_connection: set ansible_connection variable if required
-        ansible_user: clab
-        ansible_password: clab@123
+        ansible_connection: network_cli 
+        ansible_network_os: iosxr
+        ansible_user: cisco
+        ansible_password: cisco123
       hosts:
         clab-uninet-lab-v1-CU-R1:
           ansible_host: 172.20.20.29

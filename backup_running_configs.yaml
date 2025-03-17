@@ -1,0 +1,44 @@
+---
+- name: Backup running configuration from IOS-XR device
+  hosts: xrd
+  gather_facts: false
+  connection: network_cli
+  
+  tasks:
+  - name: Backup running configuration
+    cisco.iosxr.iosxr_config:
+      backup: true
+      backup_options:
+        filename: "{{ inventory_hostname }}.cfg"
+        dir_path: running_configs
+    register: backup_result
+
+- name: Backup running configuration from Junos device
+  hosts: crpd
+  gather_facts: false
+  #connection: ansible.netcommon.network_cli
+  
+
+  tasks:
+  - name: Backup running configuration
+    junipernetworks.junos.junos_config:
+      backup: true
+      backup_options:
+        filename: "{{ inventory_hostname }}.cfg"
+        dir_path: running_configs
+    register: backup_result
+
+
+- name: Backup running configuration from IOS-XE device
+  hosts: cisco_csr1000v
+  gather_facts: false
+  connection: network_cli
+  
+  tasks:
+  - name: Backup running configuration
+    cisco.ios.ios_config:
+      backup: true
+      backup_options:
+        filename: "{{ inventory_hostname }}.cfg"
+        dir_path: running_configs
+    register: backup_result
