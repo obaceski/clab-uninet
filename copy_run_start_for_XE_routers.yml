@@ -10,5 +10,5 @@
       backup: true
       backup_options:
         filename: "startup-config.cfg"
-        dir_path: clab-uninet-lab-v1/{{ inventory_hostname_short }}/config
+        dir_path: clab-uninet-lab-v1/{{ inventory_hostname_short[-6:] }}/config
     register: backup_result
