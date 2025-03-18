@@ -12,6 +12,8 @@ all:
         ansible_connection: ansible.netcommon.network_cli
         ansible_user: admin
         ansible_password: admin
+        #ansible_libssh_user: admin
+        #ansible_libssh_password: admin
         ansible_become: yes
         ansible_become_method: enable
         ansible_network_os: cisco.ios.ios
@@ -21,11 +23,11 @@ all:
           ansible_host: 172.20.20.26
     crpd:
       vars:
-        # ansible_connection: set ansible_connection variable if required
-        ansible_connection: network_cli 
-        ansible_network_os: junos
-        ansible_user: admin
+        ansible_connection: netconf
+        ansible_network_os: junipernetworks.junos.junos        
+        ansible_user: root
         ansible_password: clab123
+        ansible_netconf_port: 830
 
       hosts:
         clab-uninet-lab-v1-CU-R5:
