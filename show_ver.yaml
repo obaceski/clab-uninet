@@ -38,12 +38,12 @@
       msg: "{{ output['stdout_lines'][0][1] }}"
 
 
-
-
 - name: Show Junos release
   hosts: crpd
   gather_facts: false
-  
+  #connection: local
+ 
+
   tasks:
   - name: Show ver
     junipernetworks.junos.junos_command:
@@ -53,5 +53,4 @@
 
   - name: print captured output
     ansible.builtin.debug:
-      msg: "{{ output['stdout_lines'][0] }}"
-
+       msg: "{{ output['stdout_lines'][0][2] }}"

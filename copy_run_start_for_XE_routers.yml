@@ -10,5 +10,6 @@
       backup: true
       backup_options:
         filename: "startup-config.cfg"
+        #needs extraction of the substring to be smarter and not fixed
         dir_path: clab-uninet-lab-v1/{{ inventory_hostname_short[-6:] }}/config
     register: backup_result
