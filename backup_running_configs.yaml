@@ -34,8 +34,6 @@
 - name: Backup running configuration from Junos device
   hosts: crpd
   gather_facts: false
-  #connection: ansible.netcommon.network_cli
-  
 
   tasks:
   - name: Backup running configuration
