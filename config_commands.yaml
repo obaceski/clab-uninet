@@ -1,0 +1,51 @@
+---
+- name: Configuration of IOS-XR device
+  hosts: xrd
+  gather_facts: false
+  connection: network_cli
+  
+  tasks:
+  - name: Push configuration
+    cisco.iosxr.iosxr_config:
+      commands:
+      - 'lldp'
+      - 'no interface gigabitEthernet 0/0/0/0 shutdown'
+      - 'no interface gigabitEthernet 0/0/0/1 shutdown'
+      - 'no interface gigabitEthernet 0/0/0/2 shutdown'
+      - 'no interface gigabitEthernet 0/0/0/3 shutdown'
+      - 'no interface gigabitEthernet 0/0/0/4 shutdown'
+      - 'no interface gigabitEthernet 0/0/0/5 shutdown'
+      - 'no interface gigabitEthernet 0/0/0/6 shutdown'
+      - 'interface gigabitEthernet 0/0/0/0 lldp enable'
+      - 'interface gigabitEthernet 0/0/0/1 lldp enable'
+      - 'interface gigabitEthernet 0/0/0/2 lldp enable'
+      - 'interface gigabitEthernet 0/0/0/3 lldp enable'
+      - 'interface gigabitEthernet 0/0/0/4 lldp enable'
+      - 'interface gigabitEthernet 0/0/0/5 lldp enable'
+      - 'interface gigabitEthernet 0/0/0/6 lldp enable'
+
+
+####
+- name: Configuration of IOS-XE device
+  hosts: cisco_csr1000v
+  gather_facts: false
+  connection: network_cli
+  
+  tasks:
+  - name: Push configuration
+    cisco.ios.ios_config:
+      commands:
+      - 'lldp run'
+
+
+###
+- name: Configuration of Junos device
+  hosts: crpd
+  gather_facts: false
+
+  tasks:
+  - name: Push configuration
+    junipernetworks.junos.junos_config:
+      commands:
+
+
