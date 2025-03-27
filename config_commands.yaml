@@ -36,6 +36,14 @@
     cisco.ios.ios_config:
       commands:
       - 'lldp run'
+      #- 'interface gigabitEthernet2'
+      #- 'no shut'
+      #- 'exit'
+      #- 'interface gigabitEthernet3'
+      #- 'no shut'
+      - 'interface gigabitEthernet4'
+      - 'no shut'
+
 
 
 ###

@@ -14,10 +14,9 @@ all:
         ansible_become: yes
         ansible_become_method: enable
         ansible_network_os: cisco.ios.ios
-
       hosts:
         clab-uninet-lab-v1-VA-R14:
-          ansible_host: 172.20.20.26
+          ansible_host: 172.20.20.31
     crpd:
       vars:
         ansible_connection: netconf
@@ -25,30 +24,29 @@ all:
         ansible_user: root
         ansible_password: clab123
         ansible_netconf_port: 830
-
       hosts:
         clab-uninet-lab-v1-CU-R5:
-          ansible_host: 172.20.20.22
-        clab-uninet-lab-v1-CU-R6:
           ansible_host: 172.20.20.8
+        clab-uninet-lab-v1-CU-R6:
+          ansible_host: 172.20.20.26
         clab-uninet-lab-v1-CU-R7:
-          ansible_host: 172.20.20.5
+          ansible_host: 172.20.20.6
         clab-uninet-lab-v1-TR-R6:
           ansible_host: 172.20.20.13
         clab-uninet-lab-v1-TR-R7:
-          ansible_host: 172.20.20.17
+          ansible_host: 172.20.20.9
         clab-uninet-lab-v1-TR-R8:
-          ansible_host: 172.20.20.15
+          ansible_host: 172.20.20.2
         clab-uninet-lab-v1-TR-R9:
-          ansible_host: 172.20.20.6
+          ansible_host: 172.20.20.22
         clab-uninet-lab-v1-VA-R10:
-          ansible_host: 172.20.20.11
+          ansible_host: 172.20.20.7
         clab-uninet-lab-v1-VA-R11:
-          ansible_host: 172.20.20.10
+          ansible_host: 172.20.20.17
         clab-uninet-lab-v1-VA-R12:
-          ansible_host: 172.20.20.28
+          ansible_host: 172.20.20.10
         clab-uninet-lab-v1-VA-R13:
-          ansible_host: 172.20.20.21
+          ansible_host: 172.20.20.20
     xrd:
       vars:
         ansible_connection: network_cli 
@@ -57,112 +55,112 @@ all:
         ansible_password: cisco123
       hosts:
         clab-uninet-lab-v1-CU-R1:
-          ansible_host: 172.20.20.29
-        clab-uninet-lab-v1-CU-R2:
-          ansible_host: 172.20.20.31
-        clab-uninet-lab-v1-CU-R3:
-          ansible_host: 172.20.20.24
-        clab-uninet-lab-v1-CU-R4:
-          ansible_host: 172.20.20.27
-        clab-uninet-lab-v1-TR-R1:
-          ansible_host: 172.20.20.20
-        clab-uninet-lab-v1-TR-R2:
           ansible_host: 172.20.20.16
-        clab-uninet-lab-v1-TR-R3:
+        clab-uninet-lab-v1-CU-R2:
           ansible_host: 172.20.20.25
-        clab-uninet-lab-v1-TR-R4:
-          ansible_host: 172.20.20.9
-        clab-uninet-lab-v1-TR-R5:
+        clab-uninet-lab-v1-CU-R3:
+          ansible_host: 172.20.20.3
+        clab-uninet-lab-v1-CU-R4:
+          ansible_host: 172.20.20.14
+        clab-uninet-lab-v1-TR-R1:
           ansible_host: 172.20.20.30
+        clab-uninet-lab-v1-TR-R2:
+          ansible_host: 172.20.20.5
+        clab-uninet-lab-v1-TR-R3:
+          ansible_host: 172.20.20.4
+        clab-uninet-lab-v1-TR-R4:
+          ansible_host: 172.20.20.28
+        clab-uninet-lab-v1-TR-R5:
+          ansible_host: 172.20.20.12
         clab-uninet-lab-v1-VA-R1:
           ansible_host: 172.20.20.18
         clab-uninet-lab-v1-VA-R2:
-          ansible_host: 172.20.20.14
+          ansible_host: 172.20.20.27
         clab-uninet-lab-v1-VA-R3:
-          ansible_host: 172.20.20.7
+          ansible_host: 172.20.20.21
         clab-uninet-lab-v1-VA-R4:
-          ansible_host: 172.20.20.19
+          ansible_host: 172.20.20.29
         clab-uninet-lab-v1-VA-R5:
-          ansible_host: 172.20.20.12
-        clab-uninet-lab-v1-VA-R6:
-          ansible_host: 172.20.20.2
-        clab-uninet-lab-v1-VA-R7:
-          ansible_host: 172.20.20.4
-        clab-uninet-lab-v1-VA-R8:
           ansible_host: 172.20.20.23
+        clab-uninet-lab-v1-VA-R6:
+          ansible_host: 172.20.20.11
+        clab-uninet-lab-v1-VA-R7:
+          ansible_host: 172.20.20.19
+        clab-uninet-lab-v1-VA-R8:
+          ansible_host: 172.20.20.15
         clab-uninet-lab-v1-VA-R9:
-          ansible_host: 172.20.20.3
+          ansible_host: 172.20.20.24
     cuautitlan_junos:
       hosts:
         clab-uninet-lab-v1-CU-R5:
-          ansible_host: 172.20.20.22
-        clab-uninet-lab-v1-CU-R6:
           ansible_host: 172.20.20.8
+        clab-uninet-lab-v1-CU-R6:
+          ansible_host: 172.20.20.26
         clab-uninet-lab-v1-CU-R7:
-          ansible_host: 172.20.20.5
+          ansible_host: 172.20.20.6
     cuautitlan_xr:
       hosts:
         clab-uninet-lab-v1-CU-R1:
-          ansible_host: 172.20.20.29
+          ansible_host: 172.20.20.16
         clab-uninet-lab-v1-CU-R2:
-          ansible_host: 172.20.20.31
+          ansible_host: 172.20.20.25
         clab-uninet-lab-v1-CU-R3:
-          ansible_host: 172.20.20.24
+          ansible_host: 172.20.20.3
         clab-uninet-lab-v1-CU-R4:
-          ansible_host: 172.20.20.27
+          ansible_host: 172.20.20.14
     triara_junos:
       hosts:
         clab-uninet-lab-v1-TR-R6:
           ansible_host: 172.20.20.13
         clab-uninet-lab-v1-TR-R7:
-          ansible_host: 172.20.20.17
+          ansible_host: 172.20.20.9
         clab-uninet-lab-v1-TR-R8:
-          ansible_host: 172.20.20.15
+          ansible_host: 172.20.20.2
         clab-uninet-lab-v1-TR-R9:
-          ansible_host: 172.20.20.6
+          ansible_host: 172.20.20.22
     triara_xr:
       hosts:
         clab-uninet-lab-v1-TR-R1:
-          ansible_host: 172.20.20.20
-        clab-uninet-lab-v1-TR-R2:
-          ansible_host: 172.20.20.16
-        clab-uninet-lab-v1-TR-R3:
-          ansible_host: 172.20.20.25
-        clab-uninet-lab-v1-TR-R4:
-          ansible_host: 172.20.20.9
-        clab-uninet-lab-v1-TR-R5:
           ansible_host: 172.20.20.30
+        clab-uninet-lab-v1-TR-R2:
+          ansible_host: 172.20.20.5
+        clab-uninet-lab-v1-TR-R3:
+          ansible_host: 172.20.20.4
+        clab-uninet-lab-v1-TR-R4:
+          ansible_host: 172.20.20.28
+        clab-uninet-lab-v1-TR-R5:
+          ansible_host: 172.20.20.12
     vallejo_junos:
       hosts:
         clab-uninet-lab-v1-VA-R10:
-          ansible_host: 172.20.20.11
+          ansible_host: 172.20.20.7
         clab-uninet-lab-v1-VA-R11:
-          ansible_host: 172.20.20.10
+          ansible_host: 172.20.20.17
         clab-uninet-lab-v1-VA-R12:
-          ansible_host: 172.20.20.28
+          ansible_host: 172.20.20.10
         clab-uninet-lab-v1-VA-R13:
-          ansible_host: 172.20.20.21
+          ansible_host: 172.20.20.20
     vallejo_xe:
       hosts:
         clab-uninet-lab-v1-VA-R14:
-          ansible_host: 172.20.20.26
+          ansible_host: 172.20.20.31
     vallejo_xr:
       hosts:
         clab-uninet-lab-v1-VA-R1:
           ansible_host: 172.20.20.18
         clab-uninet-lab-v1-VA-R2:
-          ansible_host: 172.20.20.14
+          ansible_host: 172.20.20.27
         clab-uninet-lab-v1-VA-R3:
-          ansible_host: 172.20.20.7
+          ansible_host: 172.20.20.21
         clab-uninet-lab-v1-VA-R4:
-          ansible_host: 172.20.20.19
+          ansible_host: 172.20.20.29
         clab-uninet-lab-v1-VA-R5:
-          ansible_host: 172.20.20.12
-        clab-uninet-lab-v1-VA-R6:
-          ansible_host: 172.20.20.2
-        clab-uninet-lab-v1-VA-R7:
-          ansible_host: 172.20.20.4
-        clab-uninet-lab-v1-VA-R8:
           ansible_host: 172.20.20.23
+        clab-uninet-lab-v1-VA-R6:
+          ansible_host: 172.20.20.11
+        clab-uninet-lab-v1-VA-R7:
+          ansible_host: 172.20.20.19
+        clab-uninet-lab-v1-VA-R8:
+          ansible_host: 172.20.20.15
         clab-uninet-lab-v1-VA-R9:
-          ansible_host: 172.20.20.3
+          ansible_host: 172.20.20.24

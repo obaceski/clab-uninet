@@ -5,12 +5,6 @@
   gather_facts: false
   
   tasks:
-  #- name: Enable NETCONF if not already done
-  #  cisco.iosxr.iosxr_netconf:
-  #     state: present
-  #     netconf_vrf: default
-  #     listens_on: 830
-
   - name: Show ver
     cisco.iosxr.iosxr_command:
       commands: 

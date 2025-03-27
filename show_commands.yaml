@@ -1,0 +1,48 @@
+---
+
+- name: Show commands on IOS-XR device
+  hosts: xrd
+  gather_facts: false
+  
+  tasks:
+  - name: show commands
+    cisco.iosxr.iosxr_command:
+      commands: 
+      - 'show lldp neighbors'
+    register: output
+
+  - name: print captured output
+    ansible.builtin.debug:
+      msg: "{{ output['stdout_lines'][0][4:] }}"
+
+
+####
+- name: Show commands on IOS-XE device
+  hosts: cisco_csr1000v
+  gather_facts: false
+  connection: network_cli
+  
+  tasks:
+  - name: Show commands
+    cisco.ios.ios_command:
+      commands:
+      - 'show lldp neighbors'
+    register: output
+
+  - name: print captured output
+    ansible.builtin.debug:
+      msg: "{{ output['stdout_lines'][0][4:] }}"
+
+
+
+###
+- name: Show commands on Junos device
+  hosts: crpd
+  gather_facts: false
+
+  tasks:
+  - name: show commands
+    junipernetworks.junos.junos_command:
+      commands:
+
+
